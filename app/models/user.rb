@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, :presence => true, :uniqueness => true
+
+has_many :photos
+
+has_many :likes, :through => :photos
+
+has_many :comments, :through => :photos
+
 end

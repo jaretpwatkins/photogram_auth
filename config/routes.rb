@@ -53,6 +53,15 @@ Rails.application.routes.draw do
   get "/delete_photo/:id", :controller => "photos", :action => "destroy"
   #------------------------------
 
+  # List users
+  get "/users", :controller => "users", :action => "index"
+
   devise_for :users
+
+  #Don't conflict with devise_for
+  get "/users/:id", :controller => "users", :action => "show"
+
+  get "/my_likes", :controller => "users", :action => "mylikes"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
