@@ -18,8 +18,6 @@ end
 
 def mylikes
 
-@user = User.find(params[:id])
-
 render("/users/mylikes.html.erb")
 end
 
